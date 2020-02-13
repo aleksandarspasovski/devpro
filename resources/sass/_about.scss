@@ -1,0 +1,157 @@
+.re{
+    width: 37%;
+    left: -39%;
+    top: 1px;
+    margin-left: 15px;
+    position: absolute;
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px black;
+}
+.disa{
+    margin: 0;
+    line-height: 3;
+    color: #6c757d;
+    text-align: center;
+    background-color: #f7f7f7!important;
+}
+.card-wrappers{
+    width: 1038px;
+	float: left;
+}
+.card-search{
+    width: 96.5%;
+    height: 58px;
+    margin-left: 8px;
+    background-color: #233e54;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 0px 4px -1px black;
+}
+.inner-card-search{
+    padding: 11px;
+}
+.inner-card-search input{
+    padding-left: 5px;
+    line-height: 2;
+    overflow: hidden;
+    border-width: 0px;
+    border-radius: 5px;
+    background-color: #f8fdf8;
+    border: 1px solid gainsboro;
+}
+.inner-card-search input:focus{
+    outline: none;
+    border: 1px solid #007bff;
+}
+.inner-card-wrapper{
+    width: 1000px;
+    float: left;
+    margin-left: 9px;
+    min-height: 650px;
+    display: inline-block;
+    background-color: #fff;
+    box-shadow: 0px 0px 4px -1px black;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+.card-bck{
+    background-size: contain;
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-image: url('/picture/cta.png');
+}
+.cards{
+    width: 23%;
+    min-height: 194px;
+    max-height: 194px;
+	margin: 10px;
+	float: left;
+    overflow: hidden;
+    border-radius: 5px;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.125);
+}
+.card-body{
+    padding: 15px!important;
+}
+.cards:hover{
+    box-shadow: 0px 0px 3px -1px black;
+}
+.cards:hover .added-on{
+    background-color: #233e54;
+}
+.card-title{
+    width: 100%;
+    display: inherit;
+    margin-bottom: 9px;
+    font-size: 17px;
+}
+.text-muted {
+    margin-top: 5px;
+    font-size: 13px;
+    margin-bottom: 5px!important;
+}
+.card-text{
+	margin: 0;
+	font-size: 13px;
+	color: #a1a1a1;
+}
+.added-on{
+    top: 100%;
+    height: 4px;
+	position: sticky;
+    text-align: center;
+    background-color: beige;
+}
+.card-location{
+	background-image: url('/picture/location-icon.png');
+    text-indent: 17px;
+	background-size: 16px;
+    background-position: left center;
+    background-repeat: no-repeat;
+}
+.card-salary{
+    margin-top: 5px;
+	background-image: url('/picture/salary-icons.png');
+    text-indent: 20px;
+	background-size: 16px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: green;
+    font-weight: 500;
+    font-style: italic;
+    opacity: 0.9;
+}
+.card-time{
+    margin-top: 5px;
+    background-image: url('/picture/time-icon.png');
+    text-indent: 20px;
+    background-size: 16px;
+    background-position: left center;
+    background-repeat: no-repeat;
+    color: green;
+    font-weight: 500;
+    font-style: italic; 
+}
+.card-location a{
+	color: #a1a1a1;
+}
+.card-location:hover{
+	text-decoration: underline;
+}
+.card-body img{
+    float: left;
+    max-width: 17%;
+	margin-top: 3px;
+    margin-right: 5px;
+    margin-bottom: 9px;
+    background-color: #e2e2e245;
+}
+.text-center{
+    display: none;
+    position: absolute;
+    top: 50%;
+    right: 25%;
+    text-align: center !important;
+}

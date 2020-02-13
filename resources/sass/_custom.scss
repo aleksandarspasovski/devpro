@@ -49,17 +49,16 @@ h5{
     font-size: 18px;
 }
 .logo-w{
-    position: fixed;
-    padding-left: 15px;
-    font-weight: 600;
-    opacity: 0.5;
+    margin-left: 15px;
+    padding: 5px;
     color: #fff;
+    font-weight: 600;
+    border-radius: 13px;
+    border: 1px solid #fff;
 }
 .logo-w:hover{
-    opacity: 1;
     color: #fff;
     text-decoration: none;
-    border-bottom: 1px solid #dae4e9;
 }
 .top-right{
     float: right;
@@ -69,7 +68,7 @@ h5{
     top: 0;
     z-index: 99999;
     line-height: 3;
-    #background-color: #20463a;
+    #background-color: #24735a;
     background-color: #233e54;
     box-shadow: 0px 0px 5px -1px black;
 }
@@ -349,9 +348,6 @@ h5{
     box-shadow: 0px 0px 3px -1px black;
     background-color: #e8e8e8;
 }
-.dev-b:hover{
-    color: #74b7ff;
-}
 .premium{
 	height: 2px;
     margin: 0;
@@ -383,7 +379,7 @@ h5{
 .sort-feeds{
     display: inline-block;
     position: absolute;
-    right: -7%;
+    right: -7.8%;
 }
 .sort-feeds ul{
     margin: 0;
@@ -468,7 +464,7 @@ h5{
     position: sticky;
     top: 100%;
 }
-#button1{
+.button1{
     width: 80px;
     border-width: 0;
     border-radius: 5px;
@@ -481,12 +477,12 @@ h5{
     background-position: 8px center;
     background-image: url(/images/like-icon.png?32cb61a…);
 }
-#button1:hover{
+.button1:hover{
     color: #fff;
     background-color: #007bff;
     transition-duration: 0.5s;
 }
-#button1:focus{
+.button1:focus{
     outline: none;
 }
 #button2{
@@ -511,7 +507,7 @@ h5{
 #button2:focus{
     outline: none;
 }
-#span1{
+.span1{
     list-style: none;
 }
 .frame-builder{
@@ -531,7 +527,6 @@ h5{
     height: 70px;
     border: 0;
     background-color: transparent;
-    box-shadow: 0px 0px 2px -1px #4683ba;
 }
 .button-builder:focus{
     outline: 0;
@@ -541,6 +536,25 @@ h5{
 }
 .show{
     display: none;
+}
+.clck-me{
+    width: 74%;
+    height: 70px;
+    top: 0;
+    left: 23%;
+    margin-left: 1%;
+    position: absolute;
+    display: inline-flex;
+    background-color: #fff;
+    #box-shadow: 0px 0px 3px 0px #5e5e67;
+}
+.clck-me li{
+    width: 20%;
+    height: inherit;
+    list-style: none;
+    text-align: center;
+    line-height: 4;
+    color: #a7a8a6;
 }
 .write-post{
     background-image: url('picture/write-post.png');
@@ -572,12 +586,14 @@ h5{
 	background-color:transparent;
 }
 #footer{
-	
+	position: sticky;
+    top: 37%;
 }
 #footer > p{
     margin-top: 0px;
     margin-bottom: 0;
     font-size: 11px;
+    text-decoration: none;
 }
 .le-po{
     line-height:2;

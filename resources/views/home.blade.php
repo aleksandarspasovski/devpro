@@ -18,6 +18,11 @@
 		<a href="{{ url('/home') }}"><img src="https://www.themandarin.com.au/content/uploads/2018/06/application-3426397_1920.jpg"></a>
 	</div>
 
+	@section('footer')
+	@parent
+		
+	@endsection
+
 @endsection
 
 <div class="sort-feeds">
@@ -42,8 +47,12 @@
 					{!! Form::close() !!}
 				</div>
 			</div>
-			<div class="clck-me" style="position: absolute;top: -2px;left: 23%;height: 72px;background-color: #fff;border: 1px solid lightgrey;">
-				<button style="height: inherit;">Attach file</button>
+			<div class="clck-me">
+				<li style="height: inherit;">Attach file</li>
+				<li style="height: inherit;">Attach file2</li>
+				<li style="height: inherit;">Attach file3</li>
+				<li style="height: inherit;">Attach file4</li>
+				<li style="height: inherit;">Attach file4</li>
 			</div>
 		</div>
 	</div>
@@ -65,8 +74,8 @@
 					<a href="#"><img src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg" style="max-width: 100%;"></a>
 				</div>
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>
@@ -90,8 +99,8 @@
 					<img src="https://isb.ens.tn/wp-content/uploads/2019/08/marketing.jpg" style="max-width: 100%;">
 				</div>
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>
@@ -115,8 +124,8 @@
 					<img src="https://irevolucija.net/wp-content/uploads/2018/06/google-marketing-e1530176005110.jpg" style="max-width: 100%;">
 				</div>
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>
@@ -140,8 +149,8 @@
 					<img src="https://creativeweb.rs/slikestranice/Internet-marketing.jpg" style="max-width: 100%;">
 				</div>
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>
@@ -165,8 +174,8 @@
 					<img src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg" style="max-width: 100%;">
 				</div> -->
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>
@@ -190,8 +199,8 @@
 					<img src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg" style="max-width: 100%;">
 				</div>
 				<div class="likes">
-					<button id="button1">Like</button>
-					<li id="span1" value="0"></li>
+					<button class="button1">Like</button>
+					<li class="span1" value="0"></li>
 				<button id="button2">Dislike</button>
 					<!-- <li id="span2" value="0"></li>  -->
 				</div>

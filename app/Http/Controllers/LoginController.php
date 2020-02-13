@@ -35,11 +35,6 @@ class LoginController extends Controller
         // $req->session()->put('logged', $user);
 
     }
-    public function logout()
-    {
-        session()->flush();
-        return redirect('/');
-    }
     
     public function saveQuote(Request $req, $id)
     {
@@ -56,5 +51,11 @@ class LoginController extends Controller
         $send_quote = new Login;
         $send_quote->saveQuote($quote, $id);
         return redirect()->back();
+    }
+
+    public function logout()
+    {
+        session()->flush();
+        return redirect('/');
     }
 }

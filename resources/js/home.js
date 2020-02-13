@@ -43,28 +43,33 @@ function makeAjaxRequest(method, url){
 
 }
 function allLikes(x){
-	var x = document.querySelector('#button1');
-	var li_cnt = document.querySelector('#span1');
+	var x = document.querySelectorAll('.button1');
+	var li_cnt = document.querySelectorAll('.span1');
 
 	var likes = 0;
+	for (let i = 0; i < x.length; i++) {
+		// alert(i);
+		x[i].addEventListener('click', (e) => {
+			// var xb = e.target;
+			console.log(i);
+			e.preventDefault;
+			
+			if (li_cnt.value >= 0) {
+				li_cnt.value = ++likes;
+				if (li_cnt.value == true) {
+					li_cnt.innerText = li_cnt.value;
+					x.disabled = true;
+					var it = parseInt(li_cnt.value);
+					// session('liked'); ?????
+					makeAjaxRequest('GET', '/posts/likes/'+it+'');
+				}
 
-	x.addEventListener('click', (e) => {
-		var xb = e.target;
-		e.preventDefault;
-		
-		if (li_cnt.value >= 0) {
-			li_cnt.value = ++likes;
-			if (li_cnt.value == true) {
-				li_cnt.innerText = li_cnt.value;
-				x.disabled = true;
-				var it = parseInt(li_cnt.value);
-				// session('liked'); ?????
-				makeAjaxRequest('GET', '/posts/likes/'+it+'');
 			}
 
-		}
+		});
+		
+	}
 
-	});
 }
 function createFeeds(){
 	var create_feed_dropdown = document.querySelector('.u-sort');

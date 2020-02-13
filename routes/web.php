@@ -24,6 +24,8 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/about', 'AboutController@index');
+Route::get('/about', 'AboutController@index');
+Route::get('/about/listPeople/{response}', 'AboutController@listPeople');
 Route::get('/contact', 'ContactController@index');
 Route::get('/messages', 'SubmitControllers@index');
 

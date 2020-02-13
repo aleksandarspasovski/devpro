@@ -6,3 +6,5 @@ require('./home');
 require('./sidebar');
 
 require('./login');
+
+require('./about');

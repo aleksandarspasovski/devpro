@@ -19298,6 +19298,83 @@ module.exports = function(module) {
 
 /***/ }),
 
+/***/ "./resources/js/about.js":
+/*!*******************************!*\
+  !*** ./resources/js/about.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.addEventListener('load', function () {
+  showAndHideSpinner('.text-center', true);
+  setTimeout(function () {
+    makeAjaxRequest().then(function (data) {
+      showAndHideSpinner('.text-center', false);
+      makeElements(data);
+    });
+  }, 1000);
+  toggleDropdown();
+});
+
+function toggleDropdown() {
+  var toggle_box = document.querySelectorAll('.list-group-item-action');
+
+  for (var i = 0; i < toggle_box.length; i++) {
+    toggle_box[i].addEventListener('click', function (e) {
+      var trg = e.target;
+      console.log(trg);
+    });
+  }
+}
+
+function makeAjaxRequest(method, url) {
+  return new Promise(function (resolve, reject) {
+    var xhr = new XMLHttpRequest();
+    xhr.open(method, url);
+    var ses = document.querySelector('[type="hidden"]').value;
+    var xhr = new XMLHttpRequest();
+    xhr.open('get', '/about/listPeople/' + ses + '');
+
+    xhr.onreadystatechange = function () {
+      if (xhr.readyState === 4 && xhr.status === 200) {
+        var response = JSON.parse(xhr.responseText); // makeElements(response);
+
+        resolve(response);
+        console.log(response);
+      }
+    };
+
+    xhr.send();
+  });
+}
+
+function makeElements(data) {
+  // var	head_ttl = 'Job description or positions, frontend developer Job description or positions, frontend developer';
+  // var res = head_ttl.slice(0, 53) +'...';
+  // console.log(res);
+  document.querySelector('.inner-card-wrapper').innerHTML = '';
+
+  for (var i = 0; i < data.length; i++) {
+    var cards = "\n\t\t\t<div class=\"cards\">\n\t\t\t  <div class=\"card-body\">\n\t\t\t  \t<img src=\"picture/default-avatar.png\"  alt=\"...\">\n\t\t\t    <h5 class=\"card-title\"><a href=\"".concat(data[i].quote, "\">Job description or positions, frontend developer</a></h5>\n\t\t\t    <h6 class=\"card-subtitle mb-2 text-muted\">").concat(data[i].first_name, " ").concat(data[i].last_name, "</h6>\n\t\t\t    <p class=\"card-text card-location\"><a href=\"#\">Location</a></p>\n\t\t\t    <p class=\"card-text card-salary\">Salary $</p>\n\t\t\t    <p class=\"card-text card-time\">").concat(data[i].created_at, "</p>\n\t\t\t    <!---- <a href=\"#\" class=\"card-link\">Another link</a> ---->\n\t\t\t  </div>\n\t\t\t  <div class=\"added-on\"></div>\n\t\t\t</div>\n\t\t");
+    document.querySelector('.inner-card-wrapper').innerHTML += cards;
+  }
+}
+
+function showAndHideSpinner(selector, display) {
+  var el = document.querySelector(selector);
+  var spin = document.querySelector('.spinner');
+
+  if (display) {
+    el.style.display = 'block';
+    spin.style.backgroundColor = '#00000021';
+  } else {
+    el.style.display = 'none';
+    spin.style.backgroundColor = '#fff';
+  }
+}
+
+/***/ }),
+
 /***/ "./resources/js/app.js":
 /*!*****************************!*\
   !*** ./resources/js/app.js ***!
@@ -19313,6 +19390,8 @@ __webpack_require__(/*! ./home */ "./resources/js/home.js");
 __webpack_require__(/*! ./sidebar */ "./resources/js/sidebar.js");
 
 __webpack_require__(/*! ./login */ "./resources/js/login.js");
+
+__webpack_require__(/*! ./about */ "./resources/js/about.js");
 
 /***/ }),
 
@@ -19399,25 +19478,34 @@ function makeAjaxRequest(method, url) {
 }
 
 function allLikes(x) {
-  var x = document.querySelector('#button1');
-  var li_cnt = document.querySelector('#span1');
+  var x = document.querySelectorAll('.button1');
+  var li_cnt = document.querySelectorAll('.span1');
   var likes = 0;
-  x.addEventListener('click', function (e) {
-    var xb = e.target;
-    e.preventDefault;
 
-    if (li_cnt.value >= 0) {
-      li_cnt.value = ++likes;
+  var _loop = function _loop(i) {
+    // alert(i);
+    x[i].addEventListener('click', function (e) {
+      // var xb = e.target;
+      console.log(i);
+      e.preventDefault;
 
-      if (li_cnt.value == true) {
-        li_cnt.innerText = li_cnt.value;
-        x.disabled = true;
-        var it = parseInt(li_cnt.value); // session('liked'); ?????
+      if (li_cnt.value >= 0) {
+        li_cnt.value = ++likes;
 
-        makeAjaxRequest('GET', '/posts/likes/' + it + '');
+        if (li_cnt.value == true) {
+          li_cnt.innerText = li_cnt.value;
+          x.disabled = true;
+          var it = parseInt(li_cnt.value); // session('liked'); ?????
+
+          makeAjaxRequest('GET', '/posts/likes/' + it + '');
+        }
       }
-    }
-  });
+    });
+  };
+
+  for (var i = 0; i < x.length; i++) {
+    _loop(i);
+  }
 }
 
 function createFeeds() {

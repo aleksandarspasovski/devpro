@@ -30,6 +30,12 @@ class Login extends Model
 		return $count_nr;
 	}
 
+	public function users()
+    {
+        $sql = DB::select('select * from registers');
+		return $sql;
+    }
+
 	public function saveQuote($quote, $id)
 	{
 		$sql_quote = DB::table('registers')->where('id', $id)->update(['quote' => $quote]);

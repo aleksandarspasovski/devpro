@@ -2,39 +2,46 @@
 
 @section('title', 'Jobs Page')
 
+@section('content')
+
 @section('left-side')
 	<div class="re">
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
-		<p>lamdaasd asdad assad asdas dsad asdasd as fas f</p>
+		<div class="list-group">
+		  <p href="#" class="disa">Some text here</p>
+		  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in <span class="badge badge-primary badge-pill">2</span></a>
+		  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
+		  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
+		  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a> 
+		</div>
 	</div>
-@endsection
+@show
 
-@section('content')
-	<h2>Jobs page</h2>
-	<p>d exercitation ullamco laboris nisi ut aliquip ex ea commodo
-	consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-	cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-	proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Lorem ipsum dolor sit amet, consectetur adipisicing elit</p>
+<?php 
+	// $str = 'Job description or positions, frontend developer Job ';
+	// var_dump(strlen($str));
+ ?>	
+	<div class="card-wrappers">
+		<input type="hidden" value="<?php echo hash('sha1', session()->get('logged')); ?>">
+		<div class="card-search">
+			<div class="inner-card-search">
+				<form>
+					<input type="text" name="job" placeholder="Enter job position" autocomplete="on">
+					<input type="text" name="location" placeholder="Enter job location">
+					<button>Search</button>
+				</form>
+			</div>
+		</div>
+		<div class="inner-card-wrapper card-bck spinner">
+			<div class="text-center">
+			  <div class="spinner-border" role="status">
+			    <span class="sr-only">Loading...</span>
+			  </div>
+			</div>
+		</div>
+	</div>
+
 @endsection
 
 @section('sidebar')
-@parent
-	<div class="m-sidebar">
-		<div class="sidebar-ab">
-			<p>additional side bar</p>
-		</div>
-		<div class="sidebar-ab">
-			<p>additional side bar</p>
-		</div>
-		<div class="sidebar-ab">
-			<p>additional side bar</p>
-		</div>
-		<div class="sidebar-ab">
-			<p>additional side bar</p>
-		</div>
-	</div>
-@endsection
+
+@stop

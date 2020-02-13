@@ -2,16 +2,6 @@
 <html>
 <head>
 	<title>DevProject</title>
-
-	<?php 
-		$url = Request::url();
-		// $url = explode('/', str_split($url, 1));
-		// $last_slash = strrpos('/', $url);
-		// $last = substr($url, 0);
-		
-		// var_dump($last);die;
-	 ?>
-
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 	<script type="text/javascript" src="/js/app.js"></script>
 </head>

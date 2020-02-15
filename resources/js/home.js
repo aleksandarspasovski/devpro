@@ -60,10 +60,8 @@ function allLikes(x){
 					li_cnt.innerText = li_cnt.value;
 					x.disabled = true;
 					var it = parseInt(li_cnt.value);
-					// session('liked'); ?????
 					makeAjaxRequest('GET', '/posts/likes/'+it+'');
 				}
-
 			}
 
 		});
@@ -99,8 +97,6 @@ function sortFeeds(create_feed){
 		create_options.value = array[i];
 		create_options.name = array[i];
 		create_section.appendChild(create_options);
-
-		// console.log(array[i]);
 	}
 
 }

@@ -8,18 +8,8 @@ window.addEventListener('load', () => {
 				makeElements(data);
 			});
 	 }, 1000);
-	 toggleDropdown();
 });
-function toggleDropdown(){
-	var toggle_box = document.querySelectorAll('.list-group-item-action');
-		for (let i = 0; i < toggle_box.length; i++) {
-			toggle_box[i].addEventListener('click', (e) => {
-			var trg = e.target;
-			console.log(trg);
-		});
-	}
-	
-}
+
 function makeAjaxRequest(method, url){
 	return new Promise((resolve, reject) => {
 		var xhr = new XMLHttpRequest();
@@ -30,19 +20,14 @@ function makeAjaxRequest(method, url){
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					var response = JSON.parse(xhr.responseText);
-					// makeElements(response);
 					resolve(response);
-					console.log(response);
 				}
 			}
 		xhr.send();
 	});
 }
 function makeElements(data){
-	// var	head_ttl = 'Job description or positions, frontend developer Job description or positions, frontend developer';
-	// var res = head_ttl.slice(0, 53) +'...';
-	// console.log(res);
-
+    
 	document.querySelector('.inner-card-wrapper').innerHTML = '';
 
 	for (var i = 0; i < data.length; i++) {

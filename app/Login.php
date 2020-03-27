@@ -11,14 +11,11 @@ class Login extends Model
 	{
 		$sql = DB::select('select id, first_name, last_name, quote from registers where id = :id', ['id' => $id]);
 		return $sql;
-		// var_dump($sql);die;	
 	}
 	public function display($email, $password)
 	{
 		$sql = DB::select('select id, first_name, last_name, email, password from registers where email = :email and password = :password', ['email' => $email, 'password' => $password]);
 		$count_nr = count($sql);
-		
-		// var_dump($sql);die;
 
 		if ($count_nr == 1) {
 			$res = $sql[0]->id;

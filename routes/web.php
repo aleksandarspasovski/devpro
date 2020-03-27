@@ -24,10 +24,10 @@ Route::get('/', function () {
 
 Route::get('/home', 'HomeController@index');
 Route::get('/about', 'AboutController@index');
-Route::get('/about', 'AboutController@index');
 Route::get('/about/listPeople/{response}', 'AboutController@listPeople');
 Route::get('/contact', 'ContactController@index');
 Route::get('/messages', 'SubmitControllers@index');
+Route::get('/jobs/selected', 'JobsController@job');
 
 Route::get('/error', function () {
     return view('error');
@@ -47,12 +47,16 @@ Route::get('/home/ofeeds', 'HomeController@olderFeeds');
 
 Route::get('/posts/likes/{it}', 'PostsController@likes');
 
+Route::get('/users/account/{id}', 'UsersController@index');
+
+Route::get('/users/account', 'UsersController@index');
+
 Route::post('/login', 'LoginController@login');
 Route::post('saveQuote/{id}', 'LoginController@saveQuote');
 Route::post('register/create', 'RegisterController@create');
 Route::get('/logout', 'LoginController@logout');
 
-Route::get('/messages/get', 'SubmitControllers@getMessages');
+// Route::get('/messages/get', 'SubmitControllers@getMessages');
 //create route post type when you create controller for form!!!
 Route::post('contact/submit', 'SubmitControllers@submit');
 

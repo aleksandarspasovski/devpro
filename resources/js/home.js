@@ -3,6 +3,25 @@ window.addEventListener('load', () => {
 	createFeeds();
 	toggleTextArea();
 	allLikes();
+	displayImage();
+	var submit = document.querySelector('#submiter');
+	var empty_text = document.querySelector('.form-textarea');
+
+	empty_text.addEventListener('keyup', (e) => {
+		var cr = document.querySelector('.add-p');
+		cr.innerText = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+
+	});
+
+	submit.addEventListener('click', (e) => {
+		e.preventDefault();
+		var response = confirm('Are you sure?');
+		if (!response) {
+			return false;
+		} else{
+			submit.form.submit();
+		}
+	});
 
 });
 
@@ -17,13 +36,13 @@ function toggleTextArea(){
 
 		if (b.classList.contains('show')) {
 			b.style.display = 'block';
-			n.style.width = '22%';
+			n.style.width = '165px';
 			cr_post.style.width = '100%';
 		} else{
 			b.classList.remove('show')
 			b.style.display = 'none';
-			n.style.width = '100%';
-			cr_post.style.width = '22%';
+			n.style.width = '165px';
+			cr_post.style.width = '35%';
 		}
 	});
 }
@@ -63,13 +82,10 @@ function allLikes(x){
 					// session('liked'); ?????
 					makeAjaxRequest('GET', '/posts/likes/'+it+'');
 				}
-
 			}
 
-		});
-		
+		});	
 	}
-
 }
 function createFeeds(){
 	var create_feed_dropdown = document.querySelector('.u-sort');
@@ -84,7 +100,6 @@ function createFeeds(){
 // ------------this function will automatically create section bar, it is disabled for now---------------
 function sortFeeds(create_feed){
 	var create_feed = document.querySelector('.sort-feeds');
-	
 
 	var array = ['Sort by', 'Newer', 'Older'];
 
@@ -99,8 +114,22 @@ function sortFeeds(create_feed){
 		create_options.value = array[i];
 		create_options.name = array[i];
 		create_section.appendChild(create_options);
-
-		// console.log(array[i]);
 	}
 
+}
+function displayImage() {
+	var file = document.querySelector('#file');
+	// console.log(file);
+	file.addEventListener('change', () => {
+		var file_el = file.files[0];
+		if (file_el) {
+			var fileReader = new FileReader();
+			// console.log(fileReader);
+			fileReader.addEventListener('load', (e) => {
+				document.querySelector('#preview').setAttribute('src', e.target.result);
+			});
+
+			fileReader.readAsDataURL(file_el);
+		}
+	});
 }

@@ -3,11 +3,10 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Login;
 
-class HomeController extends Controller
+class JobsController extends Controller
 {
-	public function index(Request $req)
+    public function index(Request $req)
 	{	
 		if (session()->has('logged')) {
 			$id = session()->get('logged');
@@ -17,15 +16,15 @@ class HomeController extends Controller
 			return view('/home')->with(['req' => $req, 'link_url' => $link_url]);	
 		} else{
 			session()->forget('logged');
-			return redirect('error'); 
+			return redirect('error');
 		}
 	}
-
-	public function newerFeeds(){
-		return 123;
-	}
-
-	public function olderFeeds(){
-		return 123456;
+	public function job(Request $req)
+	{
+		if (empty($req['job_title'])) {
+			return redirect('/about?job_err=job is expired or deleted');
+		}
+		var_dump($req['job_id']); 
+		var_dump($req['job_title']);die;
 	}
 }

@@ -8,10 +8,10 @@
 	<div class="re">
 		<div class="list-group">
 		  <p href="#" class="disa">Some text here</p>
-		  <a href="#" class="list-group-item list-group-item-action">Dapibus ac facilisis in <span class="badge badge-primary badge-pill">2</span></a>
-		  <a href="#" class="list-group-item list-group-item-action">Morbi leo risus</a>
-		  <a href="#" class="list-group-item list-group-item-action">Porta ac consectetur ac</a>
-		  <a href="#" class="list-group-item list-group-item-action">Vestibulum at eros</a> 
+		  <a href="#" class="list-group-item list-group-item-action">Button 1</a>
+		  <a href="#" class="list-group-item list-group-item-action">Button 2</a>
+		  <a href="#" class="list-group-item list-group-item-action">Button 3</a>
+		  <a href="#" class="list-group-item list-group-item-action">Button 4</a> 
 		</div>
 	</div>
 @show
@@ -37,6 +37,9 @@
 			    <span class="sr-only">Loading...</span>
 			  </div>
 			</div>
+			@if(isset($_GET['job_err']))
+				<?php echo 'There is no job'; ?>
+			@endif
 		</div>
 	</div>
 

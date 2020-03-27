@@ -6,20 +6,20 @@ window.addEventListener('load', () => {
 			.then((data) => {
 				showAndHideSpinner('.text-center', false);
 				makeElements(data);
-			});
+			})
 	 }, 1000);
-	 toggleDropdown();
+	 // toggleDropdown();
 });
-function toggleDropdown(){
-	var toggle_box = document.querySelectorAll('.list-group-item-action');
-		for (let i = 0; i < toggle_box.length; i++) {
-			toggle_box[i].addEventListener('click', (e) => {
-			var trg = e.target;
-			console.log(trg);
-		});
-	}
+// function toggleDropdown(){
+// 	var toggle_box = document.querySelectorAll('.list-group-item-action');
+// 		for (let i = 0; i < toggle_box.length; i++) {
+// 			toggle_box[i].addEventListener('click', (e) => {
+// 			var trg = e.target;
+			
+// 		});
+// 	}
 	
-}
+// }
 function makeAjaxRequest(method, url){
 	return new Promise((resolve, reject) => {
 		var xhr = new XMLHttpRequest();
@@ -30,7 +30,6 @@ function makeAjaxRequest(method, url){
 			xhr.onreadystatechange = () => {
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					var response = JSON.parse(xhr.responseText);
-					// makeElements(response);
 					resolve(response);
 					console.log(response);
 				}
@@ -50,7 +49,7 @@ function makeElements(data){
 			<div class="cards">
 			  <div class="card-body">
 			  	<img src="picture/default-avatar.png"  alt="...">
-			    <h5 class="card-title"><a href="${data[i].quote}">Job description or positions, frontend developer</a></h5>
+			    <h5 class="card-title"><a href="/jobs/selected?job_title=${data[i].quote.replace(/\s/g, '-')}&job_id=${data[i].id}">Job description or positions, frontend developer</a></h5>
 			    <h6 class="card-subtitle mb-2 text-muted">${data[i].first_name} ${data[i].last_name}</h6>
 			    <p class="card-text card-location"><a href="#">Location</a></p>
 			    <p class="card-text card-salary">Salary $</p>

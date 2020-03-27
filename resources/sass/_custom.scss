@@ -60,6 +60,9 @@ h5{
     color: #fff;
     text-decoration: none;
 }
+.logo-w:active{
+    transform: scale(0.9);
+}
 .top-right{
     float: right;
     width: 100%;
@@ -136,13 +139,6 @@ h5{
 }
 .form-sb input[type="text"]:focus{
 	box-shadow: 0px 0px 0px 0px;
-}
-.form-control:focus {
-    color: #495057;
-    background-color: #fff;
-    border-color: #80bdff;
-    outline: 0;
-    box-shadow: 0 0 0 0.5px rgba(0, 123, 255, 0.25);
 }
 .btn{
 	display: inline-block;
@@ -328,6 +324,7 @@ h5{
     display: inline-block;
     text-align: center;
     cursor: pointer;
+    overflow: hidden;
 }
 .more-opt{
     border-width: 0;
@@ -423,14 +420,14 @@ h5{
     height: -webkit-fill-available;
     display: inline-block;
     position: absolute;
-    left: -10px;
+    left: -3px;
     border: 1px solid lightgrey;
 }
 .percent-cntr{
     width: 3px;
     display: inline-block;
     position: absolute;
-    left: -10px;
+    left: -3px;
     height: 100%;
     scroll-behavior: smooth;
     animation: pecent 2s infinite;
@@ -439,7 +436,7 @@ h5{
 
 }
 .create-post{
-    width: 22%;
+    width: 35%;
     margin-bottom: 15px;
     background-color: white;
     box-shadow: 0px 0px 3px 0px #5e5e67;
@@ -449,7 +446,7 @@ h5{
     color: #bcbec2;
 }
 .media img{
-    max-width: 5%;
+    max-width: 8%;
 }
 .media h5{
     display: inline;
@@ -518,12 +515,16 @@ h5{
     list-style: none;
     color: #a7a8a6;
 }
-.frame-builder li:hover{
+.frame-builder li:first-child:hover{
     text-decoration: underline;
     color: #4a87bd;
 }
+.frame-builder hr{
+    margin-top: 0;
+    margin-bottom: 0;
+}
 .button-builder{
-    width: 100%;
+    width: 165px;
     height: 70px;
     border: 0;
     background-color: transparent;
@@ -532,29 +533,12 @@ h5{
     outline: 0;
 }
 .builder{
+    width: 95%;
+    margin: 0 auto;
     display: none;
 }
 .show{
     display: none;
-}
-.clck-me{
-    width: 74%;
-    height: 70px;
-    top: 0;
-    left: 23%;
-    margin-left: 1%;
-    position: absolute;
-    display: inline-flex;
-    background-color: #fff;
-    #box-shadow: 0px 0px 3px 0px #5e5e67;
-}
-.clck-me li{
-    width: 20%;
-    height: inherit;
-    list-style: none;
-    text-align: center;
-    line-height: 4;
-    color: #a7a8a6;
 }
 .write-post{
     background-image: url('picture/write-post.png');
@@ -562,6 +546,94 @@ h5{
     background-size: 16px;
     text-indent: 11px;
     background-repeat: no-repeat;
+}
+#text-area{
+    min-height: 130px;
+}
+.post-frame{
+    width: 100%;
+    margin-top: 7px;
+    background-color: #233e54;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+.post-frame img{
+    max-width: 7%;
+    margin-left: 5px;
+}
+.post-frame li{
+    display: inline-block;
+}
+.post-frame li a{
+    color: #fff;
+    font-weight: 500;
+    text-decoration: none;
+}
+.post-frame-image{
+    margin: 5px auto;
+    text-align: center;
+}
+.post-frame-image img{
+    max-width: 100%;
+}
+#text-area input[type="submit"]{
+    width: 10%;
+    margin-bottom: 10px;
+    position: relative;
+    left: 90%;
+    color: #fff;
+    line-height: 2;
+    border-width: 0;
+    border-radius: 5px;
+    background-color: #007bff;
+}
+#file::-webkit-file-upload-button {
+  visibility: hidden;
+}
+#file::before{
+    width: 95px;
+    padding: 0px 5px;
+    display: inline-block;
+    content: '';
+    outline: none;
+    cursor: pointer;
+    white-space: nowrap;
+    border-right: 1px solid #999;
+    background: -webkit-gradient(linear, left top, left bottom, from(#f9f9f9), to(#e3e3e3));
+}
+#file{
+    width: 86px;
+    height: 70px;
+    float: right;
+    display: inline-block;
+    border-left: 1px solid #dbdee1;
+    background-color: #fff;
+}
+#file:hover{
+    background-color: #00000008;
+}
+.file-icon{
+    background-image: url('/picture/upload-icon.png');
+    background-size: 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    opacity: 0.7;
+}
+.form-textarea{
+    width: 100%;
+    height: 100px;
+    padding-top: 7px;
+    padding-left: 10px;
+    resize: none;
+    border: 1px solid #233e546b;
+    border-bottom-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    #height: calc(1.5em + 0.75rem + 2px);
+}
+.form-textarea:focus{
+    outline: 0;
+    background-color: #fff;
+    box-shadow: 0px 0px 2px 0px #7bbbe3;
 }
 .col-lg-8{
     max-width: 65.666667%;

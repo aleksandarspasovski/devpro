@@ -79,7 +79,6 @@ function allLikes(x){
 					li_cnt.innerText = li_cnt.value;
 					x.disabled = true;
 					var it = parseInt(li_cnt.value);
-					// session('liked'); ?????
 					makeAjaxRequest('GET', '/posts/likes/'+it+'');
 				}
 			}
@@ -117,6 +116,7 @@ function sortFeeds(create_feed){
 	}
 
 }
+<<<<<<< HEAD
 function displayImage() {
 	var file = document.querySelector('#file');
 	// console.log(file);
@@ -133,3 +133,5 @@ function displayImage() {
 		}
 	});
 }
+=======
+>>>>>>> refs/remotes/origin/master

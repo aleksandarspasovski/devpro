@@ -436,7 +436,8 @@ h5{
 
 }
 .create-post{
-    width: 35%;
+    width: 22%;
+    display: inline-block;
     margin-bottom: 15px;
     background-color: white;
     box-shadow: 0px 0px 3px 0px #5e5e67;
@@ -445,8 +446,15 @@ h5{
     padding-left: 3%;
     color: #bcbec2;
 }
+.create-frame{
+    width: 22%;
+    display: inline-block;
+    margin-bottom: 15px;
+    background-color: white;
+    box-shadow: 0px 0px 3px 0px #5e5e67;
+}
 .media img{
-    max-width: 8%;
+    max-width: 6%;
 }
 .media h5{
     display: inline;
@@ -511,7 +519,7 @@ h5{
     
 }
 .frame-builder li{
-    line-height: 4;
+    line-height: 3;
     list-style: none;
     color: #a7a8a6;
 }
@@ -533,7 +541,7 @@ h5{
     outline: 0;
 }
 .builder{
-    width: 95%;
+    width: 90%;
     margin: 0 auto;
     display: none;
 }
@@ -552,13 +560,14 @@ h5{
 }
 .post-frame{
     width: 100%;
-    margin-top: 7px;
+    height: 50px;
+    margin-top: 15px;
     background-color: #233e54;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
 }
 .post-frame img{
-    max-width: 7%;
+    max-width: 6%;
     margin-left: 5px;
 }
 .post-frame li{
@@ -576,6 +585,39 @@ h5{
 .post-frame-image img{
     max-width: 100%;
 }
+.write-post-frame{
+    line-height: 3;
+    list-style: none;
+    color: #a7a8a6;
+}
+.write-post-frame:hover{
+    text-decoration: underline;
+    color: #4a87bd;
+}
+#cancel-button{
+    width: 25px;
+    display: none;
+    position: absolute;
+    opacity: 0.5;
+    right: 60px;
+    top: 255px;
+    color: #233e54;
+    cursor: pointer;
+    white-space: pre;
+    border: 1px solid;
+    border-radius: 15px;
+    transition-duration: 0.5s;
+}
+#cancel-button:hover{
+    opacity: 1;
+    color: #fff;
+    transition-duration: 0.5s;
+    background-color: #00000061;
+    box-shadow: 0px 0px 6px -1px white;
+}
+#cancel-button:focus{
+    outline: 0;
+}
 #text-area input[type="submit"]{
     width: 10%;
     margin-bottom: 10px;
@@ -586,6 +628,9 @@ h5{
     border-width: 0;
     border-radius: 5px;
     background-color: #007bff;
+}
+#text-area input[type="submit"]:active{
+    transform: scale(0.9);
 }
 #file::-webkit-file-upload-button {
   visibility: hidden;
@@ -606,6 +651,9 @@ h5{
     height: 70px;
     float: right;
     display: inline-block;
+    position: absolute;
+    top: 0;
+    right: 15px;
     border-left: 1px solid #dbdee1;
     background-color: #fff;
 }
@@ -653,6 +701,9 @@ h5{
 }
 .list-group{
 	margin-bottom:15px;
+}
+.list-group-item{
+    font-weight: 500;
 }
 .jumbotron{
 	background-color:transparent;

@@ -29,6 +29,8 @@ Route::get('/contact', 'ContactController@index');
 Route::get('/messages', 'SubmitControllers@index');
 Route::get('/jobs/selected', 'JobsController@job');
 
+Route::get('/jobs/create', 'JobsController@jobCreate');
+
 Route::get('/error', function () {
     return view('error');
 });
@@ -46,6 +48,8 @@ Route::get('/home/nfeeds', 'HomeController@newerFeeds');
 Route::get('/home/ofeeds', 'HomeController@olderFeeds');
 
 Route::get('/posts/likes/{it}', 'PostsController@likes');
+
+Route::post('/home/posts/', 'PostsController@postCreate');
 
 Route::get('/users/account/{id}', 'UsersController@index');
 

@@ -18,4 +18,7 @@ class Posts extends Model
    {
 
    }
-}
+   public function insertPost()
+   {
+
+   }

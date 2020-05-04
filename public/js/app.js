@@ -19312,20 +19312,15 @@ window.addEventListener('load', function () {
       showAndHideSpinner('.text-center', false);
       makeElements(data);
     });
-  }, 1000);
-  toggleDropdown();
-});
-
-function toggleDropdown() {
-  var toggle_box = document.querySelectorAll('.list-group-item-action');
-
-  for (var i = 0; i < toggle_box.length; i++) {
-    toggle_box[i].addEventListener('click', function (e) {
-      var trg = e.target;
-      console.log(trg);
-    });
-  }
-}
+  }, 1000); // toggleDropdown();
+}); // function toggleDropdown(){
+// 	var toggle_box = document.querySelectorAll('.list-group-item-action');
+// 		for (let i = 0; i < toggle_box.length; i++) {
+// 			toggle_box[i].addEventListener('click', (e) => {
+// 			var trg = e.target;
+// 		});
+// 	}
+// }
 
 function makeAjaxRequest(method, url) {
   return new Promise(function (resolve, reject) {
@@ -19337,8 +19332,7 @@ function makeAjaxRequest(method, url) {
 
     xhr.onreadystatechange = function () {
       if (xhr.readyState === 4 && xhr.status === 200) {
-        var response = JSON.parse(xhr.responseText); // makeElements(response);
-
+        var response = JSON.parse(xhr.responseText);
         resolve(response);
         console.log(response);
       }
@@ -19355,7 +19349,7 @@ function makeElements(data) {
   document.querySelector('.inner-card-wrapper').innerHTML = '';
 
   for (var i = 0; i < data.length; i++) {
-    var cards = "\n\t\t\t<div class=\"cards\">\n\t\t\t  <div class=\"card-body\">\n\t\t\t  \t<img src=\"picture/default-avatar.png\"  alt=\"...\">\n\t\t\t    <h5 class=\"card-title\"><a href=\"".concat(data[i].quote, "\">Job description or positions, frontend developer</a></h5>\n\t\t\t    <h6 class=\"card-subtitle mb-2 text-muted\">").concat(data[i].first_name, " ").concat(data[i].last_name, "</h6>\n\t\t\t    <p class=\"card-text card-location\"><a href=\"#\">Location</a></p>\n\t\t\t    <p class=\"card-text card-salary\">Salary $</p>\n\t\t\t    <p class=\"card-text card-time\">").concat(data[i].created_at, "</p>\n\t\t\t    <!---- <a href=\"#\" class=\"card-link\">Another link</a> ---->\n\t\t\t  </div>\n\t\t\t  <div class=\"added-on\"></div>\n\t\t\t</div>\n\t\t");
+    var cards = "\n\t\t\t<div class=\"cards\">\n\t\t\t  <div class=\"card-body\">\n\t\t\t  \t<img src=\"picture/default-avatar.png\"  alt=\"...\">\n\t\t\t    <h5 class=\"card-title\"><a href=\"/jobs/selected?job_title=".concat(data[i].quote.replace(/\s/g, '-'), "&job_id=").concat(data[i].id, "\">Job description or positions, frontend developer</a></h5>\n\t\t\t    <h6 class=\"card-subtitle mb-2 text-muted\">").concat(data[i].first_name, " ").concat(data[i].last_name, "</h6>\n\t\t\t    <p class=\"card-text card-location\"><a href=\"#\">Location</a></p>\n\t\t\t    <p class=\"card-text card-salary\">Salary $</p>\n\t\t\t    <p class=\"card-text card-time\">").concat(data[i].created_at, "</p>\n\t\t\t    <!---- <a href=\"#\" class=\"card-link\">Another link</a> ---->\n\t\t\t  </div>\n\t\t\t  <div class=\"added-on\"></div>\n\t\t\t</div>\n\t\t");
     document.querySelector('.inner-card-wrapper').innerHTML += cards;
   }
 }
@@ -19439,6 +19433,24 @@ window.addEventListener('load', function () {
   createFeeds();
   toggleTextArea();
   allLikes();
+  displayImage();
+  redirectToJobCreate();
+  var submit = document.querySelector('#submiter');
+  var empty_text = document.querySelector('.form-textarea');
+  empty_text.addEventListener('keyup', function (e) {
+    var cr = document.querySelector('.add-p');
+    cr.innerText = e.target.value.charAt(0).toUpperCase() + e.target.value.slice(1);
+  });
+  submit.addEventListener('click', function (e) {
+    e.preventDefault();
+    var response = confirm('Are you sure?');
+
+    if (!response) {
+      return false;
+    } else {
+      submit.form.submit();
+    }
+  });
 });
 
 function toggleTextArea() {
@@ -19451,30 +19463,32 @@ function toggleTextArea() {
 
     if (b.classList.contains('show')) {
       b.style.display = 'block';
-      n.style.width = '22%';
+      n.style.width = '165px';
       cr_post.style.width = '100%';
     } else {
       b.classList.remove('show');
       b.style.display = 'none';
-      n.style.width = '100%';
+      n.style.width = '165px';
       cr_post.style.width = '22%';
     }
   });
 }
 
 function makeAjaxRequest(method, url) {
+  // return new Promise((resolve, reject) => {
   var xhr = new XMLHttpRequest();
   xhr.open(method, url);
 
   xhr.onreadystatechange = function () {
-    if (xhr.readyState === 4 && xhr.status === 200) {// console.log(xhr.readyState);
+    if (xhr.readyState === 4 && xhr.status === 200) {// var response = JSON.parse(xhr.responseText);
+      // resolve(1);
     } else if (xhr.readyState != 4 && xhr.status != 200) {
       alert('Something went wrong, try again');
     }
   };
 
   xhr.send();
-  console.log(xhr);
+  console.log(xhr); // });
 }
 
 function allLikes(x) {
@@ -19529,8 +19543,37 @@ function sortFeeds(create_feed) {
     create_options.innerText = array[i];
     create_options.value = array[i];
     create_options.name = array[i];
-    create_section.appendChild(create_options); // console.log(array[i]);
+    create_section.appendChild(create_options);
   }
+}
+
+function displayImage() {
+  var file = document.querySelector('#file');
+  file.addEventListener('change', function () {
+    var file_el = file.files[0];
+
+    if (file_el) {
+      var fileReader = new FileReader();
+      fileReader.addEventListener('load', function (e) {
+        document.querySelector('#preview').setAttribute('src', e.target.result);
+        var cancel_button = document.querySelector('#cancel-button');
+        cancel_button.style.display = 'block';
+        cancel_button.addEventListener('click', function (e) {
+          var images_tag = document.querySelector('#preview').src = '';
+          cancel_button.style.display = 'none';
+        });
+      });
+      fileReader.readAsDataURL(file_el);
+    }
+  });
+}
+
+function redirectToJobCreate() {
+  var redirect_to = document.querySelector('.button-builder-job');
+  redirect_to.addEventListener('click', function (e) {
+    // console.log();
+    window.location.href = '/jobs/create?new_job_post';
+  });
 }
 
 /***/ }),

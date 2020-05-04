@@ -9,16 +9,16 @@
 		@if (Session::has('logged'))
 			<div class="account">
 				<div class="back-img">
-					<img src="picture/background-image2.jpg">
+					<img src="/picture/background-image2.jpg">
 				</div>
 				<div class="profile">
-					<a href="picture/profile-pic.jpg" target="_blank"><img src="picture/profile-pic.jpg"></a>
+					<a href="/picture/profile-pic.jpg" target="_blank"><img src="<?php echo url('/');?>/picture/profile-pic.jpg"></a>
 				</div>
 				<li class="prof-name">
 				<!-- here is hashed id of user, delete thi 19 and 20 lines later!!!!! -->
 					<?php $route_path = '$req[0]->id'; ?>
 					<?php $rp = hash('md5', $route_path); ?>
-					<a href="/users/account/<?php echo $rp; ?>"><?php echo $req[0]->first_name; ?> <?php echo $req[0]->last_name; ?></a>
+					<a href="/users/account/<?php echo $req[0]->id; ?>"><?php echo $req[0]->first_name; ?> <?php echo $req[0]->last_name; ?></a>
 					<!-- part for QUOTE -->
 					<p><?php echo $req[0]->quote; ?></p>
 				</li>
@@ -37,18 +37,11 @@
 							<div class="update-form">
 								{!! Form::open(['url' => 'saveQuote/'. $req[0]->id, 'method' => 'post']) !!}
 									<div class="form-sb">
-									    {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Leave a quote', 'maxlength' => 60] )}}
+									    {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Set short title', 'maxlength' => 60] )}}
 								    </div>
 								    {{Form::submit('Post', ['class' => 'btn btn-primary btn-w'])}}
 								{!! Form::close() !!}
 							</div>
-						@else
-							{!! Form::open(['url' => 'saveQuote/'. $req[0]->id, 'method' => 'post']) !!}
-								<div class="form-sb">
-								    {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Leave a quote', 'maxlength' => 60] )}}
-							    </div>
-							    {{Form::submit('Post', ['class' => 'btn btn-primary btn-w'])}}
-							{!! Form::close() !!}
 						@endif
 					@endif
 				</div>

@@ -7,11 +7,16 @@
 @section('left-side')
 
 	<div class="left-box">
-		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-		tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-		quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-		consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-		cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidata.</p>
+		<div>
+			<h5>You have new notification <a href=""><span>4</span></a></h5>
+			<!-- style property for span -->
+			<!-- background-color: red;
+    color: #fff;
+    display: inline-block;
+    width: 30px;
+    text-align: center;
+    border-radius: 30px; -->
+		</div>
 	</div>
 
 	<div class="left-box-1">
@@ -35,23 +40,23 @@
 <div class="percent-cnt"></div>
 <div class="percent-cntr"></div>
 <!-- system to make post -->
-	<div class="create-post">
-		<div>
+	<div id="posts">
+		<div class="create-post">
 			<div class="frame-builder">
-				<button class="button-builder" href="?createpost"><li class="write-post">Create post</li></button>
-				<input type="file" name="file" id="file" class="file-icon" title="Add image">
+				<button class="button-builder"><li class="write-post">Create post</li></button>
 				<hr>
 				<div class="builder">
 					<div class="post-frame">
 						<img src="picture/default-avatar.png">
-						<li><a href="#"><?php echo $req[0]->first_name; ?> <?php echo $req[0]->last_name; ?></a></li>
-						
+						<li><a href="/users/account/<?php echo $req[0]->id ?>"><?php echo $req[0]->first_name; ?> <?php echo $req[0]->last_name; ?></a></li>
 					</div>
-					{!! Form::open(['url' => '/home/post', 'method' => 'get', 'id' => 'text-area']) !!}
+					{!! Form::open(['url' => '/home/posts/', 'method' => 'post', 'id' => 'text-area', 'files' => true]) !!}
+						<input type="file" name="file" id="file" class="file-icon" title="Add image">
 						{{ Form::textarea('post', '', ['class' => 'form-textarea', 'placeholder' => 'What\'s on your mind? '] ) }}
-						@csrf 
+						@csrf
 						<div class="post-frame-image">
 							<img id="preview">
+							<span id="cancel-button"> x </span>
 						</div>
 						<p class="add-p"></p>
 						{{ Form::submit('Post',[ 'id' => 'submiter']) }}
@@ -59,6 +64,11 @@
 				</div>
 			</div>
 		</div>
+
+		<div class="create-frame">
+			<button class="button-builder button-builder-job"><li class="write-post write-post-frame">Create job</li></button>
+		</div>
+
 	</div>
 	<!---------------- comment box -------------->
 	<div>

@@ -92,3 +92,42 @@
     margin-bottom: 1em;
     padding-left: 185px;
 }
+.cv-card-box{
+	width: 95%;
+	margin: 0px auto;
+	padding-bottom: 20px;
+}
+.cv-card-name{
+	text-align: center;
+}
+.cv-card-hr{
+	border-bottom: 2px solid #233e54;
+}
+.sidebar-friends-box{
+    width: 240px;
+	position: relative;
+    right: 31px;
+}
+.listed-images{
+	width: 24%;
+    height: 130px;
+    margin: 3.5px;
+}
+.listed-images:hover{
+	box-shadow: 0px 0px 3px 1px #848484;
+}
+.show-albums{
+	width: 99%;
+    display: flex;
+    margin: 0 auto;
+}
+.show-albums ul{
+    margin: 0;
+	padding: 0;
+    float: left;
+}
+.show-albums ul li{
+    float: left;
+    margin-right: 15px;
+	list-style: none;
+}

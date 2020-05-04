@@ -8,7 +8,6 @@ window.addEventListener('load', () => {
 				makeElements(data);
 			})
 	 }, 1000);
-<<<<<<< HEAD
 	 // toggleDropdown();
 });
 // function toggleDropdown(){
@@ -21,10 +20,6 @@ window.addEventListener('load', () => {
 // 	}
 	
 // }
-=======
-});
-
->>>>>>> refs/remotes/origin/master
 function makeAjaxRequest(method, url){
 	return new Promise((resolve, reject) => {
 		var xhr = new XMLHttpRequest();
@@ -36,13 +31,17 @@ function makeAjaxRequest(method, url){
 				if (xhr.readyState === 4 && xhr.status === 200) {
 					var response = JSON.parse(xhr.responseText);
 					resolve(response);
+					console.log(response);
 				}
 			}
 		xhr.send();
 	});
 }
 function makeElements(data){
-    
+	// var	head_ttl = 'Job description or positions, frontend developer Job description or positions, frontend developer';
+	// var res = head_ttl.slice(0, 53) +'...';
+	// console.log(res);
+
 	document.querySelector('.inner-card-wrapper').innerHTML = '';
 
 	for (var i = 0; i < data.length; i++) {

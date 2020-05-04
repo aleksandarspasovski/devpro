@@ -14,7 +14,25 @@ class PostsController extends Controller
     	if ($post->storeLikes($it, $id)) {
     		$post->displayLikes($id);
     	};
-		
+	}
+
+	public function postCreate(Request $req)
+	{
+		$file = $_FILES['file']['name'];
+		// var_dump($file);die;
+
+		if (!empty($file)) {
+			self::constructImage($_FILES['file']);
+			echo 'setovan je file, slika postoji'; die;
+		} else{
+			echo 'nije setovan file, slika ne postoji'; die;
+		}
+		// var_dump($req['file']);die;
+	}
+
+	private function constructImage($file)
+	{
+		var_dump($file);die;
 	}
 }
 // create table likes(

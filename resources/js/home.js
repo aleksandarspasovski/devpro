@@ -4,6 +4,7 @@ window.addEventListener('load', () => {
 	toggleTextArea();
 	allLikes();
 	displayImage();
+	redirectToJobCreate();
 	var submit = document.querySelector('#submiter');
 	var empty_text = document.querySelector('.form-textarea');
 
@@ -42,16 +43,18 @@ function toggleTextArea(){
 			b.classList.remove('show')
 			b.style.display = 'none';
 			n.style.width = '165px';
-			cr_post.style.width = '35%';
+			cr_post.style.width = '22%';
 		}
 	});
 }
 function makeAjaxRequest(method, url){
+	// return new Promise((resolve, reject) => {
 	var xhr = new XMLHttpRequest();
 		xhr.open(method, url);
 		xhr.onreadystatechange = () => {
 			if (xhr.readyState === 4 && xhr.status === 200) {
-				// console.log(xhr.readyState);
+				// var response = JSON.parse(xhr.responseText);
+				// resolve(1);
 			} else if (xhr.readyState != 4 && xhr.status != 200){
 				alert('Something went wrong, try again');
 			}
@@ -59,6 +62,7 @@ function makeAjaxRequest(method, url){
 		xhr.send();
 
 	console.log(xhr);
+	// });
 
 }
 function allLikes(x){
@@ -79,6 +83,7 @@ function allLikes(x){
 					li_cnt.innerText = li_cnt.value;
 					x.disabled = true;
 					var it = parseInt(li_cnt.value);
+					// session('liked'); ?????
 					makeAjaxRequest('GET', '/posts/likes/'+it+'');
 				}
 			}
@@ -116,22 +121,32 @@ function sortFeeds(create_feed){
 	}
 
 }
-<<<<<<< HEAD
 function displayImage() {
 	var file = document.querySelector('#file');
-	// console.log(file);
 	file.addEventListener('change', () => {
 		var file_el = file.files[0];
 		if (file_el) {
 			var fileReader = new FileReader();
-			// console.log(fileReader);
 			fileReader.addEventListener('load', (e) => {
 				document.querySelector('#preview').setAttribute('src', e.target.result);
+
+				var cancel_button = document.querySelector('#cancel-button');
+				cancel_button.style.display = 'block';
+				
+				cancel_button.addEventListener('click', (e) => {
+					var images_tag = document.querySelector('#preview').src = '';
+					cancel_button.style.display = 'none';
+				});
 			});
 
 			fileReader.readAsDataURL(file_el);
 		}
 	});
 }
-=======
->>>>>>> refs/remotes/origin/master
+function redirectToJobCreate() {
+	var redirect_to = document.querySelector('.button-builder-job');
+	redirect_to.addEventListener('click', (e) => {
+		// console.log();
+		window.location.href = '/jobs/create?new_job_post';
+	});
+}

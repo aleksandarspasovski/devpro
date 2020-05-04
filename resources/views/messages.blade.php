@@ -4,15 +4,15 @@
 <!-- Display all messages form db -->
 @section('content')
 	<h2>Messages Page</h2>
-	@if(count($messages) > 0)
-		@foreach($messages as $message)
+	<?php var_dump($message); ?>
+		@foreach($message as $messages)
 			<ul class="list-group">
-				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Nickname</span> : {{$message->name}} </li>
-				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Posted on</span> : {{$message->created_at}} </li>
-				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Comment</span> : {{$message->message}} </li>
+				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Nickname</span> : {{$messages->nickname}} </li>
+				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Posted on</span> : {{$messages->created_at}} </li>
+				<li class="list-group-item"><span style="color: #6c7477;font-style: italic;font-weight: 500;text-decoration: underline;">Comment</span> : {{$messages->message}} </li>
 			</ul>
 		@endforeach
-	@endif
+
 @endsection
 
 @section('sidebar')

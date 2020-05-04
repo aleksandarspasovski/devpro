@@ -8,10 +8,10 @@
 	<div class="re">
 		<div class="list-group">
 		  <p href="#" class="disa">Some text here</p>
-		  <a href="#" class="list-group-item list-group-item-action">Button 1</a>
-		  <a href="#" class="list-group-item list-group-item-action">Button 2</a>
-		  <a href="#" class="list-group-item list-group-item-action">Button 3</a>
-		  <a href="#" class="list-group-item list-group-item-action">Button 4</a> 
+		  <a href="?jobs" class="list-group-item list-group-item-action">Jobs</a>
+		  <a href="?followers_all&user_id=<?php echo $req[0]->id; ?>" class="list-group-item list-group-item-action">Followers</a>
+		  <a href="?following_all&user_id=<?php echo $req[0]->id; ?>" class="list-group-item list-group-item-action">Following</a>
+		  <a href="?" class="list-group-item list-group-item-action">Button 4</a> 
 		</div>
 	</div>
 @show

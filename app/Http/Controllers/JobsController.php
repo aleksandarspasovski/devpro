@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Login;
 
 class JobsController extends Controller
 {
@@ -26,5 +27,20 @@ class JobsController extends Controller
 		}
 		var_dump($req['job_id']); 
 		var_dump($req['job_title']);die;
+	}
+	public function jobCreate(Request $req)
+	{
+		// var_dump($req[0]->);die;
+		$id = session()->get('logged');
+			$get_info = new Login;
+			$req = $get_info->index($id);
+			// $link_url = '/jobs';
+			$url = url()->current();
+			$url = explode('/', $url);
+			// var_dump($url);die;
+			$link_url = 'jobs';
+			if (in_array($link_url, $url)) {
+				return view('/jobs')->with(['req' => $req, 'link_url' => $link_url]);
+			}
 	}
 }

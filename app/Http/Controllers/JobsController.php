@@ -13,8 +13,8 @@ class JobsController extends Controller
 			$id = session()->get('logged');
 			$get_info = new Login;
 			$req = $get_info->index($id);
-			$link_url = '/home';
-			return view('/home')->with(['req' => $req, 'link_url' => $link_url]);	
+			$link_url = '/jobs/create';
+			return view('/jobs/create')->with(['req' => $req, 'link_url' => $link_url]);	
 		} else{
 			session()->forget('logged');
 			return redirect('error');
@@ -37,7 +37,7 @@ class JobsController extends Controller
 			// $link_url = '/jobs';
 			$url = url()->current();
 			$url = explode('/', $url);
-			// var_dump($url);die;
+			
 			$link_url = 'jobs';
 			if (in_array($link_url, $url)) {
 				return view('/jobs')->with(['req' => $req, 'link_url' => $link_url]);

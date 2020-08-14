@@ -19,6 +19,38 @@
 	width: -webkit-fill-available;
     height: inherit;
 }
+.profile-options{
+	width: 17%;
+	display: none;
+	position: absolute;
+    z-index: 999;
+    left: 176px;
+    top: 113px;
+    overflow: hidden;
+    border-radius: 6px;
+    background-color: #403b3b94;
+    box-shadow: 0px 0px 4px -1px black;
+}
+.profile-options ul{
+	padding: 0;
+	margin: 0;
+}
+.profile-options ul li{
+	text-indent: 5px;
+	list-style: none;
+}
+.profile-options ul li a{
+	display: block;
+	color: #9ba8b3;
+	text-decoration: none;
+}
+.profile-options ul li a:hover{
+	background-color: #ffffff6e;
+	color: #fff;
+}
+.opt-show{
+	display: block;
+}
 .full-profile-img{
 	width: 120px;
     height: 110px;
@@ -38,7 +70,7 @@
 	max-width: 100%;
 }
 .desc-user-prof{
-	#border-bottom: 1px solid #e5e5e5;
+	margin-bottom: 10px;
 }
 .header-desc-user h1{
 	font-size: 30px;
@@ -92,6 +124,13 @@
     margin-bottom: 1em;
     padding-left: 185px;
 }
+.show-stats p:nth-child(2){
+	display: inline;
+	padding-right: 20px;
+}
+.show-stats span{
+	font-size: 13px;
+}
 .cv-card-box{
 	width: 95%;
 	margin: 0px auto;
@@ -105,13 +144,61 @@
 }
 .sidebar-friends-box{
     width: 240px;
-	position: relative;
-    right: 31px;
+    margin: 3px;
+    position: relative;
+    right: 15px;
+    overflow: hidden;
+    background-color: #fff;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    box-shadow: 0px 0px 3px 0px black;
+}
+.top-friends-list{
+    display: inline-block;
+    padding-bottom: 5px;
+    border-bottom: 1px solid lightgray;
+}
+.top-friends-list:hover{
+	background-color: #6392c112;
+}
+.top-friends-list span{
+	display: block;
+	font-size: 12px;
+    color: darkgrey;
+    font-style: italic;
+}
+.top-friends-box h1{
+	margin-bottom: 0;
+    padding: 5px;
+    color: #212529;
+    font-size: 20px;
+    text-align: initial;
+    border-bottom: 1px solid #999b9d78;
+    background-color: #f0f1f2;
+    background-image: url(/images/add-friends.png);
+    background-size: 17px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.top-friends-list img{
+	max-width: 19%;
+    margin: 5px;
+    float: left;
+    border-radius: 5px;
+}
+.top-friends-list li{
+    list-style: none;
+    display: block;
+}
+.top-friends-list li a{
+    display: block;
+    font-size: 15px;
+    text-decoration: none;
 }
 .listed-images{
 	width: 24%;
     height: 130px;
-    margin: 3.5px;
+    margin: 3.3px;
 }
 .listed-images:hover{
 	box-shadow: 0px 0px 3px 1px #848484;
@@ -130,4 +217,44 @@
     float: left;
     margin-right: 15px;
 	list-style: none;
+}
+.card{
+	box-shadow: 0px 0px 4px -1px black;
+}
+.bg-light{
+	background-color: #fff;
+}
+.head-feeds-name{
+	width: 97%;
+    margin: 10px auto;
+}
+.head-feeds-name li{
+	display: inline-block;
+	position: absolute;
+	list-style: none;
+}
+.head-feeds-name li a{
+	font-weight: 500;
+}
+.head-feeds-name img{
+	max-width: 10%;
+	margin-right: 10px;
+	border-radius: 5px;
+}
+.head-feeds-name small{
+	position: relative;
+    top: 10px;
+}
+.head-feeds-name button{
+	position: sticky;
+	left: 71%;
+	border-width: 0;
+	background-color: transparent;
+}
+.newer-feeds{
+	border: 1px solid lightgrey;
+}
+.frame-feeds p{
+    width: 98%;
+	margin: 5px auto;
 }

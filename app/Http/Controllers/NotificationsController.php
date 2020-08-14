@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Login;
 
-class ContactController extends Controller
+class NotificationsController extends Controller
 {
 	public function index(Request $req)
 	{	
@@ -13,8 +13,8 @@ class ContactController extends Controller
 			$id = session()->get('logged');
 			$get_info = new Login;
 			$req = $get_info->index($id);
-			$link_url = '/contact';
-			return view('/contact')->with(['req' => $req, 'link_url' => $link_url]);
+			$link_url = '/notifications';
+			return view('/notifications')->with(['req' => $req, 'link_url' => $link_url]);
 		} else{
 			session()->forget('logged');
 			return redirect('error');

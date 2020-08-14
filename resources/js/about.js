@@ -51,7 +51,7 @@ function makeElements(data){
 			  	<img src="picture/default-avatar.png"  alt="...">
 			    <h5 class="card-title"><a href="/jobs/selected?job_title=${data[i].quote.replace(/\s/g, '-')}&job_id=${data[i].id}">Job description or positions, frontend developer</a></h5>
 			    <h6 class="card-subtitle mb-2 text-muted">${data[i].first_name} ${data[i].last_name}</h6>
-			    <p class="card-text card-location"><a href="#">Location</a></p>
+			    <p class="card-text card-location">Location</p>
 			    <p class="card-text card-salary">Salary $</p>
 			    <p class="card-text card-time">${data[i].created_at}</p>
 			    <!---- <a href="#" class="card-link">Another link</a> ---->

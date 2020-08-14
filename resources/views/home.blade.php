@@ -1,3 +1,8 @@
+<!-- TODO:
+*
+*Make Admin contoller and do all admin stuff
+*
+ -->
 @extends('layouts.inc')
 
 @section('title', 'Home Page')
@@ -9,18 +14,11 @@
 	<div class="left-box">
 		<div>
 			<h5>You have new notification <a href=""><span>4</span></a></h5>
-			<!-- style property for span -->
-			<!-- background-color: red;
-    color: #fff;
-    display: inline-block;
-    width: 30px;
-    text-align: center;
-    border-radius: 30px; -->
 		</div>
 	</div>
 
 	<div class="left-box-1">
-		<a href="{{ url('/home') }}"><img src="https://www.themandarin.com.au/content/uploads/2018/06/application-3426397_1920.jpg"></a>
+		<a href="{{ url('/home') }}"><img src="https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcRfcLRIjM3S0l05i-ArTMo0mg_-PzcF6SLQFkK6LRQ8E6cDFJdg&usqp=CAU"></a>
 	</div>
 
 	@section('footer')
@@ -109,7 +107,7 @@
 				<div class="media-body">
 					<div>
 						<img src="picture/default-avatar.png" class="mr-3" alt="...">
-						<h5 class="mt-0"><a href="#">(Company name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
+						<h5 class="mt-0"><a href="#">(Company name / user name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
 					</div>
 					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 				</div>
@@ -134,7 +132,7 @@
 				<div class="media-body">
 					<div>
 						<img src="picture/default-avatar.png" class="mr-3" alt="...">
-						<h5 class="mt-0"><a href="#">(Company name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
+						<h5 class="mt-0"><a href="#">(Company name / user name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
 					</div>
 					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 				</div>
@@ -159,7 +157,7 @@
 				<div class="media-body">
 					<div>
 						<img src="picture/default-avatar.png" class="mr-3" alt="...">
-						<h5 class="mt-0"><a href="#">(Company name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
+						<h5 class="mt-0"><a href="#">(Company name / user name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
 					</div>
 					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 				</div>
@@ -184,7 +182,7 @@
 				<div class="media-body">
 					<div>
 						<img src="picture/default-avatar.png" class="mr-3" alt="...">
-						<h5 class="mt-0"><a href="#">(Company name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
+						<h5 class="mt-0"><a href="#">(Company name / user name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
 					</div>
 					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 				</div>
@@ -209,7 +207,7 @@
 				<div class="media-body">
 					<div>
 						<img src="picture/default-avatar.png" class="mr-3" alt="...">
-						<h5 class="mt-0"><a href="#">(Company name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
+						<h5 class="mt-0"><a href="#">(Company name / user name)</a> <small class="post_created"><?php echo date('d.m.Y. H:i A'); ?></small></h5>
 					</div>
 					<p>Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.</p>
 				</div>

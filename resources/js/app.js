@@ -8,3 +8,5 @@ require('./sidebar');
 require('./login');
 
 require('./about');
+
+require('./users');

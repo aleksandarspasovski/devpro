@@ -23,9 +23,9 @@ Route::get('/', function () {
 
 
 Route::get('/home', 'HomeController@index');
-Route::get('/about', 'AboutController@index');
+Route::get('/about/', 'AboutController@index');
 Route::get('/about/listPeople/{response}', 'AboutController@listPeople');
-Route::get('/contact', 'ContactController@index');
+Route::get('/notifications', 'NotificationsController@index');
 Route::get('/messages', 'SubmitControllers@index');
 Route::get('/jobs/selected', 'JobsController@job');
 
@@ -40,7 +40,7 @@ Route::get('/login', function () {
 });
 
 Route::get('/register', function () {
-    return view('register');
+    return view('register'); 
 });
 
 Route::get('/home/nfeeds', 'HomeController@newerFeeds');
@@ -52,6 +52,8 @@ Route::get('/posts/likes/{it}', 'PostsController@likes');
 Route::post('/home/posts/', 'PostsController@postCreate');
 
 Route::get('/users/account/{id}', 'UsersController@index');
+
+Route::get('/users/dpro/{fname}{lname}-{id}', 'UsersController@listedUser');
 
 Route::get('/users/account', 'UsersController@index');
 

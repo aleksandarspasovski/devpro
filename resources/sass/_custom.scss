@@ -43,7 +43,7 @@ h3{
     font-size: 24px;
 }
 h4{
-    font-size: 20px;
+    font-size: 20px; 
 }
 h5{
     font-size: 18px;
@@ -377,6 +377,7 @@ h5{
     left: -40%;
 }
 .left-box-1{
+    margin-top: 10px;
     position: sticky;
     top: 64px;
     padding: 3px;
@@ -385,6 +386,17 @@ h5{
 }
 .left-box-1 img{
     max-width: 100%;
+}
+.pin{
+    width: 30px;
+    position: absolute;
+    left: 230px;
+    opacity: 0.4;
+    background-image: url(/picture/pin.png);
+    background-size: 21px;
+    background-repeat: no-repeat;
+    background-position: center;
+    text-indent: -10000px;
 }
 .sort-feeds{
     display: inline-block;
@@ -449,32 +461,49 @@ h5{
 
 }
 .create-post{
-    width: 22%;
+    width: 24%;
     display: inline-block;
     margin-bottom: 15px;
     background-color: white;
     box-shadow: 0px 0px 3px 0px #5e5e67;
 }
 .post_created{
-    padding-left: 3%;
+    #padding-left: 3%;
     color: #bcbec2;
 }
 .create-frame{
-    width: 22%;
+    width: 24.7%;
     display: inline-block;
     margin-bottom: 15px;
     background-color: white;
     box-shadow: 0px 0px 3px 0px #5e5e67;
 }
 .media img{
-    max-width: 6%;
+    max-width: 7%;
+    float: left;
 }
 .media h5{
-    display: inline;
+    width: 90%;
+    display: inline-block;
+    margin-bottom: 0;
+}
+.media ~ hr{
+    margin-top: 0;
+    margin-bottom: 0;
+}
+.media{
+    height: inherit;
+}
+.frame-media{
+    padding: 15px;
+    height: inherit;
 }
 .pointimg{
     width: fit-content;
     margin: 0 auto;
+}
+.pointimg img{
+    max-width: 100%;
 }
 .likes{
     margin-top: 10px; 
@@ -504,22 +533,21 @@ h5{
     outline: none;
 }
 #button2{
-    width: 80px;
     margin-left: 20px;
     border-width: 0;
     border-radius: 5px;
     background-color: transparent;
-    border-top: 2px solid darkred;
+    border-top: 2px solid #bcbec3;
     box-shadow: 0px 0px 3px -1px black;
-    text-indent: 15px;
+    text-indent: 22px;
     background-size: 22px;
     background-repeat: no-repeat;
     background-position: 5px center;
-    background-image: url(/images/dislike-icon.png?32cb61a…);
+    background-image: url(/picture/comment.png);
 }
 #button2:hover{
     color: #fff;
-    background-color: darkred;
+    background-color: lightgrey;
     transition-duration: 0.5s;
 }
 #button2:focus{

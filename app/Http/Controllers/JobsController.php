@@ -30,7 +30,7 @@ class JobsController extends Controller
 	}
 	public function jobCreate(Request $req)
 	{
-		// var_dump($req[0]->);die;
+		// var_dump($req);die;
 		$id = session()->get('logged');
 			$get_info = new Login;
 			$req = $get_info->index($id);

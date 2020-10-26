@@ -41,7 +41,8 @@ class SubmitControllers extends Controller
     public function getMessages()
     {
     	$message = Message::all();
+        var_dump($message);die;
 
-    	return view('messages')->with('messages', $message);
+    	return view('messages')->with('message', $message);
     }
 }

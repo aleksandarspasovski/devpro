@@ -19349,7 +19349,7 @@ function makeElements(data) {
   document.querySelector('.inner-card-wrapper').innerHTML = '';
 
   for (var i = 0; i < data.length; i++) {
-    var cards = "\n\t\t\t<div class=\"cards\">\n\t\t\t  <div class=\"card-body\">\n\t\t\t  \t<img src=\"picture/default-avatar.png\"  alt=\"...\">\n\t\t\t    <h5 class=\"card-title\"><a href=\"/jobs/selected?job_title=".concat(data[i].quote.replace(/\s/g, '-'), "&job_id=").concat(data[i].id, "\">Job description or positions, frontend developer</a></h5>\n\t\t\t    <h6 class=\"card-subtitle mb-2 text-muted\">").concat(data[i].first_name, " ").concat(data[i].last_name, "</h6>\n\t\t\t    <p class=\"card-text card-location\"><a href=\"#\">Location</a></p>\n\t\t\t    <p class=\"card-text card-salary\">Salary $</p>\n\t\t\t    <p class=\"card-text card-time\">").concat(data[i].created_at, "</p>\n\t\t\t    <!---- <a href=\"#\" class=\"card-link\">Another link</a> ---->\n\t\t\t  </div>\n\t\t\t  <div class=\"added-on\"></div>\n\t\t\t</div>\n\t\t");
+    var cards = "\n\t\t\t<div class=\"cards\">\n\t\t\t  <div class=\"card-body\">\n\t\t\t  \t<img src=\"picture/default-avatar.png\"  alt=\"...\">\n\t\t\t    <h5 class=\"card-title\"><a href=\"/jobs/selected?job_title=".concat(data[i].quote.replace(/\s/g, '-'), "&job_id=").concat(data[i].id, "\">Job description or positions, frontend developer</a></h5>\n\t\t\t    <h6 class=\"card-subtitle mb-2 text-muted\">").concat(data[i].first_name, " ").concat(data[i].last_name, "</h6>\n\t\t\t    <p class=\"card-text card-location\">Location</p>\n\t\t\t    <p class=\"card-text card-salary\">Salary $</p>\n\t\t\t    <p class=\"card-text card-time\">").concat(data[i].created_at, "</p>\n\t\t\t    <!---- <a href=\"#\" class=\"card-link\">Another link</a> ---->\n\t\t\t  </div>\n\t\t\t  <div class=\"added-on\"></div>\n\t\t\t</div>\n\t\t");
     document.querySelector('.inner-card-wrapper').innerHTML += cards;
   }
 }
@@ -19386,6 +19386,8 @@ __webpack_require__(/*! ./sidebar */ "./resources/js/sidebar.js");
 __webpack_require__(/*! ./login */ "./resources/js/login.js");
 
 __webpack_require__(/*! ./about */ "./resources/js/about.js");
+
+__webpack_require__(/*! ./users */ "./resources/js/users.js");
 
 /***/ }),
 
@@ -19469,7 +19471,7 @@ function toggleTextArea() {
       b.classList.remove('show');
       b.style.display = 'none';
       n.style.width = '165px';
-      cr_post.style.width = '22%';
+      cr_post.style.width = '24%';
     }
   });
 }
@@ -19613,6 +19615,31 @@ function showIcon() {
 /***/ (function(module, exports) {
 
 window.addEventListener('load', function () {});
+
+/***/ }),
+
+/***/ "./resources/js/users.js":
+/*!*******************************!*\
+  !*** ./resources/js/users.js ***!
+  \*******************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+window.addEventListener('load', function () {
+  var opt = document.querySelector('#profile-options');
+  opt.addEventListener('click', function (e) {
+    e.preventDefault();
+    console.log(e.target);
+    var options = document.querySelector('.profile-options');
+
+    if (options.classList.contains('opt-show')) {
+      options.classList.remove('opt-show');
+      options.removeAttribute("style");
+    } else {
+      options.classList.add('opt-show'); // options.style.transitionDuration = '1s'; 
+    }
+  });
+});
 
 /***/ }),
 

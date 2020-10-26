@@ -15,7 +15,7 @@
 					<a href="/picture/profile-pic.jpg" target="_blank"><img src="<?php echo url('/');?>/picture/profile-pic.jpg"></a>
 				</div>
 				<li class="prof-name">
-				<!-- here is hashed id of user, delete thi 19 and 20 lines later!!!!! -->
+				<!-- here is hashed id of user, delete this 19 and 20 lines later!!!!! -->
 					<?php $route_path = '$req[0]->id'; ?>
 					<?php $rp = hash('md5', $route_path); ?>
 					<a href="/users/account/<?php echo $req[0]->id; ?>"><?php echo $req[0]->first_name; ?> <?php echo $req[0]->last_name; ?></a>
@@ -37,7 +37,7 @@
 							<div class="update-form">
 								{!! Form::open(['url' => 'saveQuote/'. $req[0]->id, 'method' => 'post']) !!}
 									<div class="form-sb">
-									    {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Set short title', 'maxlength' => 60] )}}
+									    {{Form::text('message', '', ['class' => 'form-control', 'placeholder' => 'Professional title', 'maxlength' => 60] )}}
 								    </div>
 								    {{Form::submit('Post', ['class' => 'btn btn-primary btn-w'])}}
 								{!! Form::close() !!}

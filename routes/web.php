@@ -49,7 +49,7 @@ Route::get('/home/ofeeds', 'HomeController@olderFeeds');
 
 Route::get('/posts/likes/{it}', 'PostsController@likes');
 
-Route::post('/home/posts/', 'PostsController@postCreate');
+Route::post('/home/posts/', 'PostsController@postCreate'); 
 
 Route::get('/users/account/{id}', 'UsersController@index');
 

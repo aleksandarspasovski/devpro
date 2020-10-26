@@ -11361,14 +11361,14 @@ body {
 }
 
 .wrapper {
-  height: 1900px;
-  background-color: #065567;
+  #height: 1900px;
 }
 
 .inner-wrapp {
-  margin-bottom: 250px;
-  padding-bottom: 10px;
-  float: left;
+  #margin-bottom: 250px;
+  #padding-bottom: 10px;
+  #float: left;
+  min-height: 800px;
   background-color: #fff;
   box-shadow: 0px 0px 2px 0px black;
 }
@@ -11697,7 +11697,27 @@ h5 {
 
 .welcome {
   margin-top: 48px;
-  height: 400px;
+  height: 460px;
+  background-image: url(/images/welcome-background.jpg?d7d9289b6e8bb209600f48663b6fcf9e);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.welcome-box {
+  width: 45%;
+  height: 240px;
+  margin: 0 auto;
+  position: relative;
+  top: 20%;
+  border-radius: 30px;
+  background-color: #00000066;
+}
+
+.welcome-box h1 {
+  padding: 99px;
+  text-align: center;
+  color: aliceblue;
 }
 
 .welcome > h1 {
@@ -11762,12 +11782,6 @@ h5 {
   margin-top: 100px;
 }
 
-.dev-frame {
-  border-radius: 10px;
-  box-shadow: 0px 0px 3px -1px black;
-  background-color: #e8e8e8;
-}
-
 .premium {
   height: 2px;
   margin: 0;
@@ -11790,6 +11804,7 @@ h5 {
 }
 
 .left-box-1 {
+  margin-top: 10px;
   position: -webkit-sticky;
   position: sticky;
   top: 64px;
@@ -11800,6 +11815,18 @@ h5 {
 
 .left-box-1 img {
   max-width: 100%;
+}
+
+.pin {
+  width: 30px;
+  position: absolute;
+  left: 230px;
+  opacity: 0.4;
+  background-image: url(/picture/pin.png);
+  background-size: 21px;
+  background-repeat: no-repeat;
+  background-position: center;
+  text-indent: -10000px;
 }
 
 .sort-feeds {
@@ -11882,7 +11909,7 @@ h5 {
 }
 
 .create-post {
-  width: 22%;
+  width: 24%;
   display: inline-block;
   margin-bottom: 15px;
   background-color: white;
@@ -11890,12 +11917,12 @@ h5 {
 }
 
 .post_created {
-  padding-left: 3%;
+  #padding-left: 3%;
   color: #bcbec2;
 }
 
 .create-frame {
-  width: 22%;
+  width: 24.7%;
   display: inline-block;
   margin-bottom: 15px;
   background-color: white;
@@ -11903,11 +11930,28 @@ h5 {
 }
 
 .media img {
-  max-width: 6%;
+  max-width: 7%;
+  float: left;
 }
 
 .media h5 {
-  display: inline;
+  width: 90%;
+  display: inline-block;
+  margin-bottom: 0;
+}
+
+.media ~ hr {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.media {
+  height: inherit;
+}
+
+.frame-media {
+  padding: 15px;
+  height: inherit;
 }
 
 .pointimg {
@@ -11915,6 +11959,10 @@ h5 {
   width: -moz-fit-content;
   width: fit-content;
   margin: 0 auto;
+}
+
+.pointimg img {
+  max-width: 100%;
 }
 
 .likes {
@@ -11952,23 +12000,22 @@ h5 {
 }
 
 #button2 {
-  width: 80px;
   margin-left: 20px;
   border-width: 0;
   border-radius: 5px;
   background-color: transparent;
-  border-top: 2px solid darkred;
+  border-top: 2px solid #bcbec3;
   box-shadow: 0px 0px 3px -1px black;
-  text-indent: 15px;
+  text-indent: 22px;
   background-size: 22px;
   background-repeat: no-repeat;
   background-position: 5px center;
-  background-image: url(/images/dislike-icon.png?32cb61a…);
+  background-image: url(/picture/comment.png);
 }
 
 #button2:hover {
   color: #fff;
-  background-color: darkred;
+  background-color: lightgrey;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
 }
@@ -12146,6 +12193,7 @@ h5 {
   right: 15px;
   border-left: 1px solid #dbdee1;
   background-color: #fff;
+  outline: none;
 }
 
 #file:hover {
@@ -12211,6 +12259,12 @@ h5 {
   background-color: transparent;
 }
 
+.app-version {
+  position: absolute;
+  top: 55px;
+  right: 15px;
+}
+
 #footer {
   position: -webkit-sticky;
   position: sticky;
@@ -12225,7 +12279,7 @@ h5 {
 }
 
 .le-po {
-  line-height: 2;
+  margin: 0;
   padding-right: 20px;
   text-align: right;
   font-weight: 600;
@@ -12237,6 +12291,11 @@ h5 {
 
 .le-po a:hover {
   text-decoration: none;
+}
+
+.footer-bttm {
+  width: 100%;
+  float: right;
 }
 
 .re {
@@ -12399,10 +12458,6 @@ h5 {
   color: #a1a1a1;
 }
 
-.card-location:hover {
-  text-decoration: underline;
-}
-
 .card-body img {
   float: left;
   max-width: 17%;
@@ -12418,6 +12473,18 @@ h5 {
   top: 50%;
   right: 25%;
   text-align: center !important;
+}
+
+#notifications-box {
+  height: 333px;
+  background-color: #fff;
+  box-shadow: 0px 0px 3px 0px #5e5e67;
+}
+
+.header-notify {
+  background-color: whitesmoke;
+  padding-left: 10px;
+  border-bottom: 1px solid #c2c2c6;
 }
 
 #user-card {
@@ -12445,6 +12512,44 @@ h5 {
   height: inherit;
 }
 
+.profile-options {
+  width: 17%;
+  display: none;
+  position: absolute;
+  z-index: 999;
+  left: 176px;
+  top: 113px;
+  overflow: hidden;
+  border-radius: 6px;
+  background-color: #403b3b94;
+  box-shadow: 0px 0px 4px -1px black;
+}
+
+.profile-options ul {
+  padding: 0;
+  margin: 0;
+}
+
+.profile-options ul li {
+  text-indent: 5px;
+  list-style: none;
+}
+
+.profile-options ul li a {
+  display: block;
+  color: #9ba8b3;
+  text-decoration: none;
+}
+
+.profile-options ul li a:hover {
+  background-color: #ffffff6e;
+  color: #fff;
+}
+
+.opt-show {
+  display: block;
+}
+
 .full-profile-img {
   width: 120px;
   height: 110px;
@@ -12467,7 +12572,7 @@ h5 {
 }
 
 .desc-user-prof {
-  #border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 10px;
 }
 
 .header-desc-user h1 {
@@ -12530,6 +12635,15 @@ h5 {
   padding-left: 185px;
 }
 
+.show-stats p:nth-child(2) {
+  display: inline;
+  padding-right: 20px;
+}
+
+.show-stats span {
+  font-size: 13px;
+}
+
 .cv-card-box {
   width: 95%;
   margin: 0px auto;
@@ -12546,14 +12660,69 @@ h5 {
 
 .sidebar-friends-box {
   width: 240px;
+  margin: 3px;
   position: relative;
-  right: 31px;
+  right: 15px;
+  overflow: hidden;
+  background-color: #fff;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+  box-shadow: 0px 0px 3px 0px black;
+}
+
+.top-friends-list {
+  display: inline-block;
+  padding-bottom: 5px;
+  border-bottom: 1px solid lightgray;
+}
+
+.top-friends-list:hover {
+  background-color: #6392c112;
+}
+
+.top-friends-list span {
+  display: block;
+  font-size: 12px;
+  color: darkgrey;
+  font-style: italic;
+}
+
+.top-friends-box h1 {
+  margin-bottom: 0;
+  padding: 5px;
+  color: #212529;
+  font-size: 20px;
+  text-align: initial;
+  border-bottom: 1px solid #999b9d78;
+  background-color: #f0f1f2;
+  background-image: url(/images/add-friends.png);
+  background-size: 17px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.top-friends-list img {
+  max-width: 19%;
+  margin: 5px;
+  float: left;
+  border-radius: 5px;
+}
+
+.top-friends-list li {
+  list-style: none;
+  display: block;
+}
+
+.top-friends-list li a {
+  display: block;
+  font-size: 15px;
+  text-decoration: none;
 }
 
 .listed-images {
   width: 24%;
   height: 130px;
-  margin: 3.5px;
+  margin: 3.3px;
 }
 
 .listed-images:hover {
@@ -12577,5 +12746,69 @@ h5 {
   float: left;
   margin-right: 15px;
   list-style: none;
+}
+
+.card {
+  box-shadow: 0px 0px 4px -1px black;
+}
+
+.bg-light {
+  background-color: #fff;
+}
+
+.head-feeds-name {
+  width: 97%;
+  margin: 10px auto;
+}
+
+.head-feeds-name li {
+  display: inline-block;
+  position: absolute;
+  list-style: none;
+}
+
+.head-feeds-name li a {
+  font-weight: 500;
+}
+
+.head-feeds-name img {
+  max-width: 10%;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+.head-feeds-name small {
+  position: relative;
+  top: 10px;
+}
+
+.head-feeds-name button {
+  position: -webkit-sticky;
+  position: sticky;
+  left: 71%;
+  border-width: 0;
+  background-color: transparent;
+}
+
+.licomsh ul {
+  display: -webkit-box;
+  display: flex;
+  margin: 5px 0;
+  padding: 0px;
+}
+
+.licomsh ul li {
+  float: left;
+  list-style: none;
+  margin-left: 10px;
+}
+
+.newer-feeds {
+  border: 1px solid lightgrey;
+}
+
+.frame-feeds p {
+  width: 98%;
+  margin: 5px auto;
 }
 

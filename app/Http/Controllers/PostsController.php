@@ -9,7 +9,7 @@ class PostsController extends Controller
 {
     public function likes(Request $req, $it){
     	$id = session()->get('logged');
-    	// var_dump($var);die;
+    	
     	$post = new Posts();
     	if ($post->storeLikes($it, $id)) {
     		$post->displayLikes($id);
@@ -19,15 +19,25 @@ class PostsController extends Controller
 	public function postCreate(Request $req)
 	{
 		$file = $_FILES['file']['name'];
-		// var_dump($file);die;
+		var_dump($file);
+
+		echo '<p>'.'Post_ID '. hash('md5', $_POST['text']);'</p>';
+
+		$text = $_POST['text'];
+		$time = $_POST['time'];
+ 
+		$insert_post = new Posts(); 
+
+		var_dump($_POST);die; 
+
 
 		if (!empty($file)) {
-			self::constructImage($_FILES['file']);
+			$this->constructImage($_FILES['file']);
+			echo 'Slika je spremna za dalju obradu';
 			echo 'setovan je file, slika postoji'; die;
 		} else{
 			echo 'nije setovan file, slika ne postoji'; die;
 		}
-		// var_dump($req['file']);die;
 	}
 
 	private function constructImage($file)

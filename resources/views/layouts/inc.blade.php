@@ -2,16 +2,6 @@
 <html>
 <head>
 	<title>DevProject</title>
-
-	<?php 
-	$url = Request::url();
-		// $url = explode('/', str_split($url, 1));
-		// $last_slash = strrpos('/', $url);
-		// $last = substr($url, 0);
-
-		// var_dump($last);die;
-	?>
-
 	<link rel="stylesheet" type="text/css" href="/css/app.css">
 	<script type="text/javascript" src="/js/app.js"></script>
 </head>
@@ -20,9 +10,7 @@
 	@include('include.navbar')
 
 	<div class="container">
-		@if(Request::is('/'))
-		@include('include.intro')
-		@endif
+		
 		<div class="row">
 			<div class="col-md-8 col-lg-8">
 
@@ -38,7 +26,7 @@
 				@include('include.message')
 				@yield('content')
 			</div>
-			@unless(Request::is(['login', 'messages', 'about', 'jobs/create']))
+			@unless(Request::is(['login', 'register', 'messages', 'about', 'jobs/create']))
 			<div class="col-md-4 col-lg-4">
 				@include('include.sidebar')
 			</div>

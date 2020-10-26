@@ -251,6 +251,19 @@
 	border-width: 0;
 	background-color: transparent;
 }
+.licomsh{
+	
+}
+.licomsh ul{
+	display: flex;
+	margin: 5px 0;
+	padding: 0px;
+}
+.licomsh ul li{
+	float: left;
+	list-style: none;
+	margin-left: 10px;
+}
 .newer-feeds{
 	border: 1px solid lightgrey;
 }

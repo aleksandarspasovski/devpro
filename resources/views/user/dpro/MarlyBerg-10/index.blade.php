@@ -1,3 +1,7 @@
+<?php 
+// echo 'hello world';
+// var_dump($listed);
+ ?>
 @extends('layouts.inc')
 
 @section('left-side')
@@ -14,6 +18,14 @@
 @endsection
 
 @section('footer')
+<div>
+	<div class="alert alert-success" role="alert">
+		<h4 class="alert-heading">Well done!</h4> 
+		<p>Aww yeah, you successfully read this important alert message. This example text is going to run a bit longer so that you can see how spacing within an alert works with this kind of content.</p>
+		<hr>
+		<p class="mb-0">Whenever you need to, be sure to use margin utilities to keep things nice and tidy.</p>
+	</div>
+</div>
 
 @endsection
 
@@ -22,25 +34,18 @@
 <div id="user-card">
 	<div class="frame-profile">
 		<img src="{{ url('/') }}/picture/background-image2.jpg">
-		<div class="profile-options">
-			<ul>
-				<li><a href="">Upload Image</a></li>
-				<li><a href="">Remove Image</a></li>
-				<li><a target="_blank" href="{{ url('/') }}/picture/profile-pic.jpg">Preview Image</a></li>
-			</ul>
-		</div>
 		<div class="full-profile-img">
-			<a id="profile-options" href="{{ url('/') }}/picture/profile-pic.jpg">
+			<a href="{{ url('/') }}/picture/profile-pic.jpg">
 				<img src="{{ url('/') }}/picture/profile-pic.jpg">
 			</a>
 		</div>
 	</div>
 	<div class="desc-user-prof">
 		<div class="header-desc-user">
-			<h1><?php echo $req[0]->first_name; echo ' '; echo $req[0]->last_name; ?></h1>
+			<h1><?php echo $listed[0]->first_name; echo ' '; echo $listed[0]->last_name; ?></h1>
 		</div>
 		<div class="show-stats">
-			<p><?php echo $req[0]->quote; ?> <a style="font-size: 12px;" href="?edit=&user_id=">Edit</a></p>
+			<p><?php echo $listed[0]->quote; ?> <a style="font-size: 12px;" href="?edit=&user_id=">Edit</a></p>
 			<p>Belgrade,Serbia</p>
 			<span><a href="{{ Request::url() }}?list_all_followers">Followers 15</a></span>
 			<span><a href="{{ Request::url() }}?list_all_following">Following 5</a></span>
@@ -56,70 +61,33 @@
 	</div>
 	<!-- automaticlly load feeds page  -->
 	<div>
-		<div style="padding: 25px;">
+		<div style="padding: 5px;">
 			<!-------------------- 1st load feeds ------------------------>
 			<?php if(isset($_GET['feeds'])): ?>
-
-			<?php for ($i=0; $i < 10; $i++) :?>
 				<div class="feeds newer-feeds">
 					<div class="frame-feeds">
 						<div class="head-feeds-name">
-							<img src="/picture/profile-pic.jpg">
-							<li><a href="">Aleksandar Spasovski</a></li>
-							<small>{{date('Y/m/d H:ia')}}</small>
-							<button>...</button>
+							<li><a href=""><?php echo $listed[0]->first_name, ' ', $listed[0]->last_name; ?></a></li>
 						</div>
+						<img style="max-width: 100%;" src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg">
 						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
 						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
-						<img style="max-width: 100%;" src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg">
-						<div class="licomsh">
-							<ul>
-								<li><a href="">Like</a></li>
-								<li><a href="">Comment</a></li>
-								<li><a href="">Share</a></li>
-							</ul>
-						</div>
-						<div style="width: 95%; margin: 10px auto; padding: 15px; border-top: 1px solid lightgrey;">
-							<div class="media">
-							  <img src="/picture/profile-pic.jpg" class="mr-3" alt="...">
-							  <div class="media-body">
-							    <h5 class="mt-0">Media heading</h5>
-							    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-							<hr>
-							    <div class="media mt-3">
-							        <img src="/picture/profile-pic.jpg" class="mr-3" alt="...">
-							      <div class="media-body">
-							        <h5 class="mt-0">Media heading</h5>
-							        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-							      </div>
-							    </div>
-							  </div>
-							</div>
-							<br>
-							 <hr>
-							 <div class="media">
-							  <img src="/picture/profile-pic.jpg" class="mr-3" alt="...">
-							  <div class="media-body">
-							    <h5 class="mt-0">Media heading</h5>
-							    Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-
-							<hr>
-							    <div class="media mt-3">
-							        <img src="/picture/profile-pic.jpg" class="mr-3" alt="...">
-							      <div class="media-body">
-							        <h5 class="mt-0">Media heading</h5>
-							        Cras sit amet nibh libero, in gravida nulla. Nulla vel metus scelerisque ante sollicitudin. Cras purus odio, vestibulum in vulputate at, tempus viverra turpis. Fusce condimentum nunc ac nisi vulputate fringilla. Donec lacinia congue felis in faucibus.
-							      </div>
-							    </div>
-							  </div>
-							</div>						
-						</div>
+						<span>Time: {{date('H:i')}}</span>
 					</div>
 				</div>
 				<hr>
-			<?php endfor; ?>
-
+				<div class="feeds newer-feeds">
+					<div class="frame-feeds">
+						<div class="head-feeds-name">
+							<li><a href=""><?php echo $listed[0]->first_name, ' ', $listed[0]->last_name; ?></a></li>
+						</div>
+						<img style="max-width: 100%;" src="https://optimizacijasajta-internetmarketing.com/wp-content/uploads/2018/11/Integrisani-marketing-pojmovi.jpg">
+						<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+						tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim ven</p>
+						<span>Time: {{date('H:i')}}</span>
+					</div>
+				</div>
+				<hr>
 			<?php endif; ?>
 			<!-------------------- 1st load feeds ------------------------>
 
@@ -149,7 +117,7 @@
 		<!-- <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet"> -->
 		<div class="cv-card-box">
 			<?php if (isset($_GET['cv'])): ?>
-				<h2 class="cv-card-name"><?php echo $req[0]->first_name, ' ', $req[0]->last_name, '\'s'; ?> CV</h2>
+				<h2 class="cv-card-name"><?php echo $listed[0]->first_name, ' ', $listed[0]->last_name, '\'s'; ?> CV</h2>
 				<hr class="cv-card-hr">
 				<form>
 					<div class="form-row">
@@ -224,7 +192,7 @@
 
 <div class="sidebar-friends-box">
 	<div class="top-friends-box">
-		<h1>Last added</h1> 
+		<h1>Last added</h1>
 			
 		<?php foreach ($req1 as $usr) :?>
 			<div class="top-friends-list">

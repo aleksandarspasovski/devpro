@@ -43,7 +43,7 @@ function toggleTextArea(){
 			b.classList.remove('show')
 			b.style.display = 'none';
 			n.style.width = '165px';
-			cr_post.style.width = '22%';
+			cr_post.style.width = '24%';
 		}
 	});
 }
